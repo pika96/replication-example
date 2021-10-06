@@ -1,0 +1,27 @@
+datasource:
+  url: jdbc:mysql://13.125.200.56:8000/jujeol?serverTimezone=Asia/Seoul
+  username: repl
+  password: 1234
+  slave:
+    slave1:
+      name: slave-1
+      url: jdbc:mysql://3.35.171.81:8000/jujeol?serverTimezone=Asia/Seoul
+      username: slave1
+      password: 1234
+    slave2:
+      name: slave-2
+      url: jdbc:mysql://13.209.13.228:8000/jujeol?serverTimezone=Asia/Seoul
+      username: slave2
+      password: 1234
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        show-sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        physical_naming_strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        hbm2ddl:
+          auto: create
+    generate-ddl: true
